@@ -74,13 +74,14 @@
                         </center>
                     </div>
 
-                    <div class="no2-2">
-                        <b class="pro-premiere">85% &nbsp; </b><br>
-                        <b class="pro-python">75% &nbsp; </b><br>
-                        <b class="pro-html">70% &nbsp; </b><br>
-                        <b class="pro-css">70% &nbsp; </b><br>
-                    </div>
-                </div>
+                    <section id="skills">
+                        <div class="no2-2">
+                            <b class="pro-premiere">85%</b><br>
+                            <b class="pro-python">75%</b><br>
+                            <b class="pro-html">70%</b><br>
+                            <b class="pro-css">70%</b><br>
+                        </div>
+                    </section>
 
                 <div class="skill-gallery">
                     <a href="https://youtu.be/nRCz0kNuFcM?si=I8F10dQGmHLlgrJi"><img src="image/premiere.png" class="skill-icon"></a>
@@ -195,6 +196,18 @@
                 </center>
 
                 <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                            const skillsSection = document.getElementById('skills');
+                            const observer = new IntersectionObserver((entries, observer) => {
+                                entries.forEach(entry => {
+                                if (entry.isIntersecting) {
+                                    skillsSection.classList.add('animate'); 
+                                    observer.unobserve(skillsSection); 
+                                }
+                                });
+                            }, { threshold: 0.3 }); 
+                            observer.observe(skillsSection);
+                    });
                     const slides = document.querySelectorAll('#photo img');
                     const dotsContainer = document.getElementById('dots');
                     let index = 0;

@@ -62,7 +62,7 @@ nav a {
     text-decoration: none;
     color: #333333;
     margin: 0 10px;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease;  
 }
 
 nav a:hover {
@@ -114,9 +114,14 @@ h1 {
     padding-right: 10px;
     color: white;
     line-height: 24px;
-    width: 0; /* Start at 0 width */
-    animation: progressAnimation 1.5s ease-out forwards;
+    width: 0; 
+    transition: width 1.5s ease-out;
 }
+
+.animate .pro-premiere { width: 85%; }
+.animate .pro-python   { width: 75%; }
+.animate .pro-html     { width: 70%; }
+.animate .pro-css      { width: 70%; }
 
 @keyframes progressAnimation {
     to {
