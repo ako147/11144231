@@ -21,6 +21,7 @@
             <b><a href="#skills">SKILLS</a></b>
             <b><a href="#interest">INTEREST</a></b>
             <b><a href="#experience">EXPERIENCE</a></b>
+            <b><a href="#flim">PHOTO</a></b>
         </ul>
     </nav>
 
@@ -48,13 +49,13 @@
                         <b><li class="inf">From : Taichung City</li></b>
                         <b><li class="inf">Department : Information Management</li></b><br>
                     </ul>
-                    <b><span class="inf1">&nbsp;" 我既沒有愁苦到足以成為一個詩人，<br>又沒有冷漠到像個哲學家，但我清醒到足以成為一個廢人。" &nbsp;</span></b>
+                    <b><span class="inf1">&nbsp;" 我既沒有愁苦到足以成為一個詩人，<br>又沒有冷漠到像個哲學家，<br>但我清醒到足以成為一個廢人。" &nbsp;</span></b>
                     <br><br>
                     <a href="https://www.instagram.com/ako_1.2.4/"><img class="img0" src="image/instagram.png"></a>
                     <a href="https://www.facebook.com/profile.php?id=100040637917434"><img class="img0" src="image/facebook.png"></a>
                     <a href="https://youtube.com/@ako147?si=XfZSPb-z5vWgaXPj"><img class="img0" src="image/youtube.png"></a>
                     <a href="https://line.me/ti/p/NzgLmdcNFX"><img class="img0" src="image/line.png"></a>
-                    <a href="https://line.me/ti/p/NzgLmdcNFX"><img class="img0" src="image/email.png"></a>
+                    <a href="mailto:shixun15147@gmail.com"><img class="img0" src="image/email.png"></a>
                 </div>
                 </div>
             </div></center>
@@ -108,7 +109,7 @@
                 <div class="hobby">
                     <div class="h_word">
                         <span class="some"><font size="5"><b>&nbsp; 打排球 / Volleyball &nbsp;</b></font></span>
-                        <br> &nbsp; &nbsp; &nbsp; &nbsp; 排球是我最喜歡的運動之一，能夠鍛鍊全身協調性和團隊合作精神。在場上每一次的傳球、攔網和扣球都需要隊友之間的默契配合，這種團隊協作的感覺非常令人滿足。
+                        <br> &nbsp; &nbsp; &nbsp; &nbsp; 排球是我喜歡的運動之一，能夠鍛鍊全身協調性和團隊合作精神。在場上每一次的傳球、攔網和扣球都需要隊友之間的默契配合，這種團隊協作的感覺非常令人滿足。
                     </div>
                     <div class="h_pics">
                         <div class="static-image">
@@ -128,6 +129,17 @@
                         </div>
                     </div>
                 </div>
+                <div class="hobby">
+                    <div class="h_word">
+                        <span class="some"><font size="5"><b> &nbsp; 德州撲克 / Texas Hold'em Poker &nbsp; </b></font></span>
+                        <br> &nbsp; &nbsp; &nbsp; &nbsp; 德州撲克是我喜歡的消遣活動之一，這款遊戲結合了心理戰與策略判斷，每一局都像是一場緊張的智慧對決。過程中需要分析牌面、觀察對手的反應，並在有限資訊下作出最有利的決策，不僅能鍛鍊思考與判斷能力，也能培養冷靜面對壓力與掌握時機的技巧。
+                    </div>
+                    <div class="h_pics">
+                        <div class="static-image">
+                            <img src="image/poker.png">
+                        </div>
+                    </div>
+                </div>
             </div></center>
 
             <center><div class="card1" id="experience">
@@ -142,7 +154,7 @@
                         </font></div>
                 </div>      
                     <div class="club2word">
-                        <font size="5"><b>工作經歷</b></font>
+                        <font size="5"><b>工讀經歷</b></font>
                         <br> <font size="3.5">&nbsp; &nbsp; &nbsp; &nbsp; 我曾在<mark>&nbsp;7-11&nbsp;</mark>、<mark>&nbsp;飲料店&nbsp;</mark>、<mark>&nbsp;藏壽司&nbsp;</mark>、<mark>&nbsp;早餐店&nbsp;</mark>、<mark>&nbsp;無菜單料理&nbsp;</mark>和<mark>&nbsp;牛排館&nbsp;</mark>工作過。這些多樣化的工作經驗不僅讓我學會了如何處理顧客需求，也培養了我的耐心和應變能力。
                         </font></div>
                 <div class="club1">
@@ -153,6 +165,170 @@
                   </div>
                 </div>
             </div></center>
+                <center>
+                    <div class="card1" id="flim">
+                        <div class="tt1">
+                        <font size="5"><b><u>PHOTO</u></b></font><br>
+                        </div>
+
+                        <div id="photo">
+                            <img src="/image/flim.jpg" class="active">
+                            <img src="/image/flim1.JPG">
+                            <img src="/image/flim2.jpg">
+                            <img src="/image/flim3.JPG">
+
+                            <button class="btn prev" onclick="changeSlide(-1)">❮</button>
+                            <button class="btn next" onclick="changeSlide(1)">❯</button>
+
+                            <div class="dots" id="dots"></div>
+                        </div>
+                    </div>
+
+                    <div class="lightbox" id="lightbox" aria-hidden="true">
+                            <button class="lb-close" id="lbClose" aria-label="關閉">✕</button>
+                            <button class="lb-prev"  id="lbPrev"  aria-label="上一張">❮</button>
+                                <div class="lb-stage">
+                                    <img id="lbImg" alt="預覽圖片">
+                                </div>
+                            <button class="lb-next"  id="lbNext"  aria-label="下一張">❯</button>
+                    </div>
+                </center>
+
+                <script>
+                    const slides = document.querySelectorAll('#photo img');
+                    const dotsContainer = document.getElementById('dots');
+                    let index = 0;
+
+                    slides.forEach((_, i) => {
+                        const dot = document.createElement('span');
+                        dot.classList.add('dot');
+                        dot.addEventListener('click', () => goToSlide(i));
+                        dotsContainer.appendChild(dot);
+                    });
+
+                    function showSlide(i) {
+                        slides.forEach((img, idx) => img.classList.toggle('active', idx === i));
+                        document.querySelectorAll('.dot').forEach((d, idx) => d.classList.toggle('active', idx === i));
+                    }
+
+                    function changeSlide(step) {
+                        index = (index + step + slides.length) % slides.length;
+                        showSlide(index);
+                    }
+
+                    function goToSlide(i) {
+                        index = i;
+                        showSlide(index);
+                    }
+
+                    setInterval(() => changeSlide(1), 4000);
+                    
+                    showSlide(index);
+                    const lightbox   = document.getElementById('lightbox');
+                    const lbImg      = document.getElementById('lbImg');
+                    const lbClose    = document.getElementById('lbClose');
+                    const lbPrev     = document.getElementById('lbPrev');
+                    const lbNext     = document.getElementById('lbNext');
+
+                    function openLightbox(i = index) {
+                        index = i;                 
+                        lbImg.src = slides[index].src;
+                        lightbox.classList.add('open');
+                        lightbox.setAttribute('aria-hidden', 'false');
+     
+                        resetZoom();
+                    }
+
+                    function closeLightbox() {
+                        lightbox.classList.remove('open');
+                        lightbox.setAttribute('aria-hidden', 'true');
+                    }
+
+  
+                    slides.forEach((imgEl, i) => {
+                        imgEl.addEventListener('click', () => openLightbox(i));
+                    });
+
+
+                    lbClose.addEventListener('click', closeLightbox);
+                    lbPrev .addEventListener('click', () => { changeSlide(-1); lbImg.src = slides[index].src; resetZoom(); });
+                    lbNext .addEventListener('click', () => { changeSlide(1);  lbImg.src = slides[index].src; resetZoom(); });
+
+
+                    lightbox.addEventListener('click', (e) => {
+                        if (e.target === lightbox) closeLightbox();
+                    });
+
+ 
+                    document.addEventListener('keydown', (e) => {
+                        if (!lightbox.classList.contains('open')) return;
+                        if (e.key === 'Escape') closeLightbox();
+                        if (e.key === 'ArrowLeft')  { changeSlide(-1); lbImg.src = slides[index].src; resetZoom(); }
+                        if (e.key === 'ArrowRight') { changeSlide(1);  lbImg.src = slides[index].src; resetZoom(); }
+                    });
+
+
+                    let scale = 1, originX = 0, originY = 0, isPanning = false, startX = 0, startY = 0;
+
+                    function applyTransform() {
+                        lbImg.style.transform = `translate(${originX}px, ${originY}px) scale(${scale})`;
+                    }
+                    function resetZoom() {
+                        scale = 1; originX = 0; originY = 0; isPanning = false;
+                        lbImg.classList.remove('zoomed');
+                        lbImg.style.cursor = 'zoom-in';
+                        applyTransform();
+                    }
+
+                    lbImg.addEventListener('click', (e) => {
+
+                        if (isPanning) { isPanning = false; return; }
+                        const rect = lbImg.getBoundingClientRect();
+                        const cx = e.clientX - rect.left - rect.width  / 2;
+                        const cy = e.clientY - rect.top  - rect.height / 2;
+                        if (scale === 1) {
+                        scale = 2;
+                        lbImg.classList.add('zoomed');
+                        lbImg.style.cursor = 'grab';
+  
+                        originX = -cx; originY = -cy;
+                        } else {
+                        resetZoom();
+                        }
+                        applyTransform();
+                    });
+
+                    lbImg.addEventListener('mousedown', (e) => {
+                        if (scale === 1) return;
+                        isPanning = true;
+                        startX = e.clientX - originX;
+                        startY = e.clientY - originY;
+                        lbImg.style.cursor = 'grabbing';
+                        e.preventDefault();
+                    });
+                    window.addEventListener('mousemove', (e) => {
+                        if (!isPanning) return;
+                        originX = e.clientX - startX;
+                        originY = e.clientY - startY;
+                        applyTransform();
+                    });
+                    window.addEventListener('mouseup', () => {
+                        if (isPanning) lbImg.style.cursor = 'grab';
+                        isPanning = false;
+                    });
+
+                    let touchStartX = null;
+                    lightbox.addEventListener('touchstart', (e) => {
+                        if (e.touches.length === 1) touchStartX = e.touches[0].clientX;
+                    }, {passive: true});
+                    lightbox.addEventListener('touchend', (e) => {
+                        if (touchStartX == null) return;
+                        const dx = (e.changedTouches[0].clientX - touchStartX);
+                        if (dx > 40) { changeSlide(-1); lbImg.src = slides[index].src; resetZoom(); }
+                        else if (dx < -40) { changeSlide(1); lbImg.src = slides[index].src; resetZoom(); }
+                        touchStartX = null;
+                    });
+                </script>
         </article>
     </main>
     
