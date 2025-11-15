@@ -1,5 +1,5 @@
 body {
-    background-color: #c4c1c1;
+    background: linear-gradient(to bottom,white,black);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -40,9 +40,9 @@ header {
 nav {
     padding: 10px 0;
     width: 100%;
-    background-color: #f0f0f0;
+    background-color: #dadada;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     box-sizing: border-box;
 }
 
